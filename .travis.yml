@@ -1,0 +1,19 @@
+language: cpp
+
+env:
+ - ARCH=32
+ - ARCH=64
+
+# Install prerequisites (and cache the packages)
+# Note that OpenSSL should already be installed in the CI environment, but is
+# included here anyway - Just In Case!(tm)
+cache: apt
+before_install:
+ - sudo apt-get update -qq
+ - sudo apt-get install -qq boost wxwidgets zlib yaml-cpp libloadorder openssl libgit2
+
+# Build commands per docs/BUILD.MinGW.md
+script:
+ - mkdir build && cd build
+ - cmake .. -DPROJECT_LIBS_DIR=".." -DPROJECT_ARCH=$ARCH -DPROJECT_LINK=STATIC -DCMAKE_TOOLCHAIN_FILE="mingw-toolchain.cmake"
+ - make
