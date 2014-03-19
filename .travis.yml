@@ -10,8 +10,9 @@ env:
 cache: apt
 before_install:
  - sudo add-apt-repository ppa:boost-latest/ppa
+ - sudo add-apt-repository ppa:wxformbuilder/wxwidgets
  - sudo apt-get update -qq
- - sudo apt-get install -qq boost1.55 wxwidgets zlib yaml-cpp libloadorder openssl libgit2
+ - sudo apt-get install -qq boost1.55 wxwidgets3.0 zlib yaml-cpp libloadorder openssl libgit2
 
 # Build commands per docs/BUILD.MinGW.md
 script:
