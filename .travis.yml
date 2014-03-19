@@ -12,7 +12,7 @@ before_install:
  - sudo add-apt-repository -y ppa:boost-latest/ppa
  - sudo add-apt-repository -y ppa:wxformbuilder/wxwidgets
  - sudo apt-get update
- - sudo apt-get install boost1.55 wxwidgets3.0 zlib yaml-cpp libloadorder openssl libgit2
+ - sudo apt-get install boost1.55 libwxbase3.0-dev libwxgtk-media3.0-dev libwxgtk3.0-dev zlib yaml-cpp libloadorder openssl libgit2
 
 # Build commands per docs/BUILD.MinGW.md
 script:
